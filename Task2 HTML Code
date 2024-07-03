@@ -1,0 +1,79 @@
+<!-- This is Task 2 HTML Code for Online Market Place -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Marketplace</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>ShopyStore</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Become a Seller</a>
+            <a href="#">Cart</a>
+            <a href="#">Login</a>
+        </nav>
+    </header> 
+    
+    <main>
+        <section id="search">
+            <input type="text" id="search-bar" placeholder="Search for products...">
+            <button id="search-button">Search</button>
+        </section>
+        <section id="banner">
+            <button id="prev" class="nav-button">&#10094;</button>
+            <div class="banner-content">
+                <img src="s24.jpg" alt="Banner 1">
+                <img src="fastflight.jpg" alt="Banner 2">
+                <img src="banneroo2.jpg" alt="Banner 3">
+                
+            </div>
+            <button id="next" class="nav-button">&#10095;</button>
+        </section>
+
+        <section id="products">
+            <div class="product product-1">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <h2>Product 1</h2>
+                    <p>Apple Wireless AirPods MAX</p>
+                    <p>₹55000</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <div class="product product-2">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <h2>Product 2</h2>
+                    <p>Apple Watch Ultra 2</p>
+                    <p>₹89900</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            <div class="product product-3">
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <h2>Product 3</h2>
+                    <p>Cute Teddy Bear</p>
+                    <p>₹899</p>
+                    <p>Rating: ⭐⭐⭐⭐</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Marketplace. All rights reserved.</p>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
