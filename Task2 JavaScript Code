@@ -1,0 +1,70 @@
+/* This is the task 2 JavaScript code for Online Market Place */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const products = [
+        { id: 1, name: "Apple Wireless AirPods MAX", description: "High-fidelity audio with active noise cancellation.", price: "₹55000", rating: 5 },
+        { id: 2, name: "Apple Watch Ultra 2", description: "The ultimate device for a healthy life.", price: "₹89900", rating: 5 },
+        { id: 3, name: "Cute Teddy Bear", description: "Soft and cuddly teddy bear.", price: "₹899", rating: 4 },
+        
+    ];
+
+    const productContainer = document.getElementById('products');
+
+    function displayProducts(productList) {
+        productContainer.innerHTML = '';
+        productList.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product', `product-${product.id}`);
+            productElement.innerHTML = `
+                <div class="product-image"></div>
+                <div class="product-details">
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                    <p>${product.price}</p>
+                    <p>Rating: ${'⭐'.repeat(product.rating)}</p>
+                </div>
+            `;
+            productContainer.appendChild(productElement);
+        });
+    }
+
+    displayProducts(products);
+
+    const searchButton = document.getElementById('search-button');
+    const searchBar = document.getElementById('search-bar');
+
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchBar.value.toLowerCase();
+        const filteredProducts = products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) || 
+            product.description.toLowerCase().includes(searchTerm)
+        );
+        displayProducts(filteredProducts);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const bannerContent = document.querySelector('.banner-content');
+    const banners = document.querySelectorAll('.banner-content img');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+    let currentIndex = 0;
+
+    function updateBannerPosition() {
+        const width = banners[0].clientWidth;
+        bannerContent.style.transform = `translateX(${-width * currentIndex}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % banners.length;
+        updateBannerPosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + banners.length) % banners.length;
+        updateBannerPosition();
+    });
+
+    // Initial position
+    updateBannerPosition();
+});
